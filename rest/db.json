@@ -1,49 +1,49 @@
 [
     {
         "id": 1,
-        "text": "Call Mom",
+        "title": "CallMom",
         "created": 1000000000,
         "media": ""
     },
     {
         "id": 2,
-        "text": "Visit the bank",
+        "title": "Visitthebank",
         "created": 1000000000,
         "media": ""
     },
     {
         "id": 3,
-        "text": "Commit Code",
+        "title": "CommitCode",
         "created": 1000000000,
         "media": ""
     },
     {
         "id": 4,
-        "text": "Packfortravel",
+        "title": "Packfortravel",
         "created": 1000000000,
         "media": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
     },
     {
         "id": 5,
-        "text": "Pick up the dogs.",
+        "title": "Pickupthedogs.",
         "created": 1000000000,
         "media": ""
     },
     {
         "id": 6,
-        "text": "Piano Practice:Get sheets from Thabo",
+        "title": "PianoPractice:GetsheetsfromThabo",
         "created": 1000000000,
         "media": ""
     },
     {
         "id": 7,
-        "text": "Order stands from takealot",
+        "title": "Orderstandsfromtakealot",
         "created": 1000000000,
         "media": ""
     },
     {
         "id": 8,
-        "text": "Return Wallace's call.",
+        "title": "ReturnWallace'scall.",
         "created": 1000000000,
         "media": ""
     }
