@@ -1,11 +1,22 @@
-<form>
+<header class="header">
+    <div class="title">{{editMode?'Edit Task':'Add new task'}}</div>
+</header>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <mat-form-field>
         <input matInput placeholder="Title" name="title" [(ngModel)]="data.title">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Due Date</mat-label>
+        <input matInput [min]="minDate" name="due_date" [max]="maxDate" [matDatepicker]="picker"
+               [(ngModel)]="data.due_date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
         <textarea matInput name="description" placeholder="Description" [(ngModel)]="data.description"></textarea>
     </mat-form-field>
 
-    <button (click)=close()>Add</button>
+    <button (click)=close() mat-raised-button color="accent">{{editMode? 'Save':'Add'}}</button>
 </form>

@@ -1,24 +1,35 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ListItem } from '../list-item/list-item.component';
+import { DataService } from '../dataservice';
 
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  templateUrl: '../new/new.component.html',
+  styleUrls: ['../new/new.component.scss']
 })
 export class EditComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<EditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data) {
+  editMode;
+  data = {} as ListItem;
+  constructor(public dialogRef: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public data,
+    private service: DataService) {
+    if (data) {
+      this.editMode = true;
+      this.data = data;
+    }
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  close() {
+  close(): void {
     this.dialogRef.close();
+  }
+
+  onSubmit(form): void {
+    const data = form.value;
+    this.service.update(this.data.id, data);
   }
 
 }

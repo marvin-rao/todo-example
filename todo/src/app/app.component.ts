@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ListItem } from './list-item/list-item.component';
 import { EditComponent } from './edit/edit.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NewComponent } from './new/new.component';
+import { DataService } from './dataservice';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,10 @@ import { NewComponent } from './new/new.component';
 })
 export class AppComponent {
   items;
-  constructor(private http: HttpClient, public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, service: DataService) {
 
-    const url = 'https://todo-example-server.vercel.app/db.json';
-
-    this.http.get(url).subscribe((result: Array<ListItem>) => {
-      this.items = result.map((item, index) => this.mappedItem(item, index));
+    service.onDataSubject.subscribe(list => {
+      this.items = list.map((item, index) => this.mappedItem(item, index));
     });
   }
 
@@ -32,7 +30,7 @@ export class AppComponent {
           text: 'Edit',
           onClick: () => {
             this.dialog.open(EditComponent, {
-              width: '250px',
+              width: '450px',
               data: this.items[index]
             });
           }
@@ -40,7 +38,6 @@ export class AppComponent {
         {
           text: 'Delete',
           onClick: () => {
-            console.log('sdf', index);
             this.items.splice(index, 1);
           }
         }
@@ -49,15 +46,15 @@ export class AppComponent {
     return item;
   }
 
-  newTask() {
+  newTask(): void {
     this.dialog.open(NewComponent, {
-      width: '250px',
-      data: {}
+      width: '450px',
+      data: null
     });
   }
 
-  drop($event) {
-    console.log('sdf', $event);
+  drop($event): void {
+
   }
 
 }
