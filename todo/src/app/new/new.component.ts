@@ -16,7 +16,6 @@ export class NewComponent {
   constructor(
     public dialogRef: MatDialogRef<NewComponent>,
     @Inject(MAT_DIALOG_DATA) public inData, private service: DataService) {
-    this.data = inData;
   }
 
   onNoClick(): void {

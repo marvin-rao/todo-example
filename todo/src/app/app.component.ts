@@ -22,8 +22,6 @@ export class AppComponent {
   mappedItem = (item: ListItem, index: number): ListItem => {
     // @ts-ignore
     item.text = item.description;
-    // @ts-ignore
-    item.subTitle = item.due_date;
     item.overflowmenu = {
       buttons: [
         {

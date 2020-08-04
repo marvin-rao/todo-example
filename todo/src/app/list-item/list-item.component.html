@@ -8,7 +8,7 @@
         </section>
         <section>
             <div class="title">{{!item?.title?'Set ListItem title':item.title}}</div>
-            <div class="subTitle" *ngIf='item?.subTitle'>{{item.subTitle}}</div>
+            <div class="subTitle" *ngIf='item?.dueDate'>{{item.dueDate}}</div>
             <div class="text" *ngIf='item?.text'>{{item.text}}</div>
         </section>
     </section>

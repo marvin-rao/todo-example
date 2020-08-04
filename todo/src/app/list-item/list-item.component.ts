@@ -9,7 +9,7 @@ export type Buttons = Array<{
 
 export interface ListItem {
   title: string;
-  subTitle?: string;
+  dueDate?: string;
   text?: string;
   id?: string;
   icon_url?: string;
