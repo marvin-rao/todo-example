@@ -10,9 +10,14 @@ export class EditComponent {
 
   constructor(
     public dialogRef: MatDialogRef<EditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data) { }
+    @Inject(MAT_DIALOG_DATA) public data) {
+  }
 
   onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  close() {
     this.dialogRef.close();
   }
 

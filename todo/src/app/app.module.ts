@@ -10,12 +10,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { EditComponent } from './edit/edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { NewComponent } from './new/new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListItemComponent,
-    EditComponent
+    EditComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     MatMenuModule,
     DragDropModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

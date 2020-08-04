@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ListItem } from './list-item/list-item.component';
 import { EditComponent } from './edit/edit.component';
 import { MatDialog } from '@angular/material/dialog';
+import { NewComponent } from './new/new.component';
 
 @Component({
   selector: 'app-root',
@@ -23,13 +24,17 @@ export class AppComponent {
   mappedItem = (item: ListItem, index: number): ListItem => {
     // @ts-ignore
     item.text = item.description;
+    // @ts-ignore
+    item.subTitle = item.due_date;
     item.overflowmenu = {
       buttons: [
         {
           text: 'Edit',
           onClick: () => {
-            console.log('sdf', index);
-            this.items.splice(index, 1);
+            this.dialog.open(EditComponent, {
+              width: '250px',
+              data: this.items[index]
+            });
           }
         },
         {
@@ -45,13 +50,9 @@ export class AppComponent {
   }
 
   newTask() {
-    const dialogRef = this.dialog.open(EditComponent, {
+    this.dialog.open(NewComponent, {
       width: '250px',
       data: {}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 
