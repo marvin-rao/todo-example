@@ -12,7 +12,7 @@ import { DataService } from './dataservice';
 })
 export class AppComponent {
   items;
-  constructor(public dialog: MatDialog, service: DataService) {
+  constructor(public dialog: MatDialog, private service: DataService) {
 
     service.onDataSubject.subscribe(list => {
       this.items = list.map((item, index) => this.mappedItem(item, index));
@@ -53,8 +53,6 @@ export class AppComponent {
     });
   }
 
-  drop($event): void {
-
-  }
+  drop($event): void { this.service.move($event.previousIndex, $event.currentIndex); }
 
 }

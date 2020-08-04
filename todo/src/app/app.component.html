@@ -5,8 +5,8 @@
   </section>
 </header>
 
-<section cdkDropList class="container">
-  <div cdkDrag cdkDragLockAxis="y" (cdkDropListDropped)="drop($event)" *ngFor='let item of items'>
+<section cdkDropList class="container" (cdkDropListDropped)="drop($event)">
+  <div cdkDrag cdkDragLockAxis="y" *ngFor='let item of items'>
     <app-list-item [item]='item'></app-list-item>
     <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
   </div>

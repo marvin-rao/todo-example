@@ -15,11 +15,8 @@ export class NewComponent {
   editMode;
   constructor(
     public dialogRef: MatDialogRef<NewComponent>,
-    @Inject(MAT_DIALOG_DATA) public data, private service: DataService) {
-
-    const currentYear = new Date().getFullYear();
-    this.minDate = new Date(currentYear - 20, 0, 1);
-    this.maxDate = new Date(currentYear + 1, 11, 31);
+    @Inject(MAT_DIALOG_DATA) public inData, private service: DataService) {
+    this.data = inData;
   }
 
   onNoClick(): void {

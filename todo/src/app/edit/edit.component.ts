@@ -11,11 +11,11 @@ import { DataService } from '../dataservice';
 export class EditComponent {
   editMode;
   data = {} as ListItem;
-  constructor(public dialogRef: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public data,
+  constructor(public dialogRef: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public inData,
     private service: DataService) {
-    if (data) {
+    if (inData) {
       this.editMode = true;
-      this.data = data;
+      this.data = inData;
     }
   }
 

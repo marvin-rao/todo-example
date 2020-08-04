@@ -8,14 +8,13 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Due Date</mat-label>
-        <input matInput [min]="minDate" name="due_date" [max]="maxDate" [matDatepicker]="picker"
-               [(ngModel)]="data.due_date">
+        <input matInput name="dueDate" [matDatepicker]="picker" [(ngModel)]="data.subTitle">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
-        <textarea matInput name="description" placeholder="Description" [(ngModel)]="data.description"></textarea>
+        <textarea matInput name="description" placeholder="Description" [(ngModel)]="data.text"></textarea>
     </mat-form-field>
 
     <button (click)=close() mat-raised-button color="accent">{{editMode? 'Save':'Add'}}</button>

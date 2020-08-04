@@ -20,11 +20,11 @@ export class DataService {
         });
     }
 
-    public update(index, item: ListItem): void {
+    public update(id: string, item: ListItem): void {
         const data = this.dataSubject.value;
-        data[index] = item;
+        // data[index] = item;
 
-        this.dataSubject.next(data);
+        //  this.dataSubject.next(data);
     }
 
     public add(item: ListItem): void {
@@ -32,6 +32,29 @@ export class DataService {
         data.push(item);
 
         this.dataSubject.next(data);
+    }
+
+    public move(oldIdex: number, newIndex: number): void {
+        const data = this.dataSubject.value;
+        this.arrayMove(data, oldIdex, newIndex);
+
+        this.dataSubject.next(data);
+    }
+
+    private arrayMove(arr: Array<any>, oldIndex: number, newIndex: number): void {
+        while (oldIndex < 0) {
+            oldIndex += arr.length;
+        }
+        while (newIndex < 0) {
+            newIndex += arr.length;
+        }
+        if (newIndex >= arr.length) {
+            let k = newIndex - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0]);
     }
 
 }
