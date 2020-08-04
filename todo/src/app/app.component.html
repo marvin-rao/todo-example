@@ -1,16 +1,15 @@
-<section>
-  <header>this is eomthing sdgf</header>
-  <article>
-    <section class="card" *ngFor='let item of items'>
-      <div>
-        {{item?.title}}
-      </div>
-      <div>
-        {{item?.time}}
-      </div>
-      <div style="min-height: 100px;background-color: #ccc;">
-        {{item?.media}}
-      </div>
-    </section>
-  </article>
+<header class="action-bar">
+  <div class="title">TODO APP</div>
+  <section class="buttons">
+    <div class="button" (click)='newTask()'>New Task</div>
+  </section>
+</header>
+<section cdkDropList class="container">
+  <div cdkDrag
+       cdkDragLockAxis="y"
+       (cdkDropListDropped)="drop($event)"
+       *ngFor='let item of items'>
+    <app-list-item [item]='item'></app-list-item>
+    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+  </div>
 </section>

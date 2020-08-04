@@ -1,0 +1,81 @@
+// @import '../../../common.scss';
+$legal-padding-horizontal:14px;
+
+.list-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+
+.overflow-menu {
+    height: $legal-padding-horizontal * 2;
+    width: $legal-padding-horizontal * 2;
+    line-height: $legal-padding-horizontal * 2;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(0, 0, 0, 0.4);
+    margin: $legal-padding-horizontal /4;
+}
+
+.list-item.industrial {
+    margin: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    border: none;
+}
+
+.list-item .title {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.list-item .subTitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .65);
+}
+
+
+.list-item .text {
+    font-size: 14px;
+    font-weight: 400;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.icon {
+    background-color: #eee;
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 1000px;
+    margin-right: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.media {
+    background-color: #eee;
+    height: 200px;
+    margin-bottom: $legal-padding-horizontal/2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.buttons-container {
+    display: flex;
+    padding-top: 6px;
+}
+
+.inline-button {
+    margin-right: $legal-padding-horizontal/2;
+}

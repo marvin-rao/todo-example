@@ -1,0 +1,37 @@
+<div [ngClass]='"list-item " +item?.design?.template' [ngStyle]="item?.styles">
+
+    <section class="media" *ngIf='item?.media' [ngStyle]="{'background-image': 'url(' + item.media + ')'}"></section>
+
+    <section style="display:flex">
+        <section *ngIf='item?.icon_url' class="icon"
+                 [ngStyle]="{'background-image': 'url(' + item.icon_url + ')'}">
+        </section>
+        <section>
+            <div class="title">{{!item?.title?'Set ListItem title':item.title}}</div>
+            <div class="subTitle" *ngIf='item?.subTitle'>{{item.subTitle}}</div>
+            <div class="text" *ngIf='item?.text'>{{item.text}}</div>
+        </section>
+    </section>
+
+    <section *ngIf='item?.buttons' class="buttons-container">
+        <nav class="inline-button" [ngStyle]="button.styles"
+             *ngFor='let button of item.buttons'
+             (click)='button.onClick ? button.onClick($event):null'>
+            <span class="material-icons" *ngIf="button.icon" style="vertical-align: middle;">{{button.icon}}</span>
+            <span style="font-size: 12px;">{{button.text}}</span>
+        </nav>
+    </section>
+
+    <div class="overflow-menu material-icons" dir="rtl"
+         [matMenuTriggerFor]="menu"
+         *ngIf='item.overflowmenu'>more_vert
+    </div>
+</div>
+
+<mat-menu #menu="matMenu" yPosition="below" style="margin-top: 45px;">
+    <button style="outline: none;" *ngFor='let button of item?.overflowmenu?.buttons' mat-menu-item
+            class="header-menu-item"
+            (click)='button.onClick ? button.onClick($event):null'>
+        {{button.text}}
+    </button>
+</mat-menu>
