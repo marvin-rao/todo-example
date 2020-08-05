@@ -9,7 +9,7 @@ Also, the project is hosted online using Vercel here : https://todo-example.verc
 
 This is bassed on an example rest endpoint (https://todo-example-server.vercel.app/db.json), that produces something like :
 
-| id | title                                  | description                                   | created  | due\_date |
+| id | title                                  | text                                   | created  | due\_date |
 |----|----------------------------------------|-----------------------------------------------|----------|-----------|
 | 1  | Call Mom                               | Don't forget to give her order numbers        | 8/6/2020 | 8/6/2020  |
 | 2  | Visit the bank                         | Ask for help with taxes                       | 8/6/2020 | 8/6/2020  |
