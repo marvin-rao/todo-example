@@ -1,4 +1,4 @@
-This project was generated using Angular CLI ~10.
+**This project was generated using Angular CLI ~10.**
 
 `npm i` to install packages
 
