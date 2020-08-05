@@ -15,7 +15,10 @@ export class AppComponent {
   constructor(public dialog: MatDialog, private service: DataService) {
 
     service.onDataSubject.subscribe(list => {
-      this.items = list.map((item, index) => this.mappedItem(item, index));
+      if (!list) {
+        return;
+      }
+      this.items = list.map(e => Object.assign({}, e)).map((item, index) => this.mappedItem(item, index));
     });
   }
 

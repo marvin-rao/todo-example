@@ -5,7 +5,11 @@
   </section>
 </header>
 
-<section cdkDropList class="container" (cdkDropListDropped)="drop($event)">
+<section *ngIf='items.length === 0' style="padding: 200px;">
+  <div style="font-size: 20px;text-align: center;">No Tasks, add tasks</div>
+</section>
+
+<section *ngIf='items.length > 0' cdkDropList class="container" (cdkDropListDropped)="drop($event)">
   <div cdkDrag cdkDragLockAxis="y" *ngFor='let item of items'>
     <app-list-item [item]='item'></app-list-item>
     <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
