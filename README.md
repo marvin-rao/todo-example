@@ -1,3 +1,4 @@
+
 **This project was generated using Angular CLI ~10.**
 
 `npm i` to install packages
@@ -19,6 +20,10 @@ This is bassed on an example rest endpoint (https://todo-example-server.vercel.a
 | 7  | Order stands from takealot             |                                               | 8/6/2020 | 8/6/2020  |
 | 8  | Return Wallace's call\.                |                                               | 8/6/2020 | 8/6/2020  |
 
+**Features**
+- Adding Tasks
+- Adding those tasks
+- Local Storage - Data will be cached even after closing the browser.
 
 **Limitations**
 
