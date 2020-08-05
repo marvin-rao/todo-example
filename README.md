@@ -22,7 +22,9 @@ This is bassed on an example rest endpoint (https://todo-example-server.vercel.a
 
 **Features**
 - Adding Tasks
-- Adding those tasks
+- Editing a task
+- Deleting a task
+- Rearranging the order of tasks through drag and drop
 - Local Storage - Data will be cached even after closing the browser.
 
 **Limitations**
