@@ -11,7 +11,7 @@ export interface ListItem {
   title: string;
   dueDate?: string;
   text?: string;
-  id?: string;
+  id: string;
   icon_url?: string;
   styles?: any;
   buttons?: Buttons;

@@ -14,7 +14,7 @@
     </mat-form-field>
 
     <mat-form-field>
-        <textarea matInput name="description" placeholder="Description" [(ngModel)]="data.text"></textarea>
+        <textarea matInput name="text" placeholder="Text" [(ngModel)]="data.text"></textarea>
     </mat-form-field>
 
     <button (click)=close() mat-raised-button color="accent">{{editMode? 'Save':'Add'}}</button>

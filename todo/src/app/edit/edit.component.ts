@@ -19,17 +19,18 @@ export class EditComponent {
     }
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+  onNoClick(): void { this.close(); }
 
-  close(): void {
-    this.dialogRef.close();
-  }
+  close(): void { this.dialogRef.close(); }
 
   onSubmit(form): void {
-    const data = form.value;
-    this.service.update(this.data.id, data);
+    const task = form.value;
+    this.service.update({
+      title: task.title,
+      text: task.text,
+      id: this.data.id,
+      dueDate: task.dueDate
+    });
   }
 
 }

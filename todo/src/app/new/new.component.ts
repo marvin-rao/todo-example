@@ -27,8 +27,8 @@ export class NewComponent {
   }
 
   onSubmit(form): void {
-    const data = form.value;
-    this.service.add(data);
+    const task: ListItem = form.value;
+    this.service.new(task.title, task.text, task.dueDate);
     this.close();
   }
 

@@ -23,8 +23,6 @@ export class AppComponent {
   }
 
   mappedItem = (item: ListItem, index: number): ListItem => {
-    // @ts-ignore
-    item.text = item.description;
     item.overflowmenu = {
       buttons: [
         {
@@ -39,7 +37,7 @@ export class AppComponent {
         {
           text: 'Delete',
           onClick: () => {
-            this.items.splice(index, 1);
+            this.service.delete(this.items[index]);
           }
         }
       ]

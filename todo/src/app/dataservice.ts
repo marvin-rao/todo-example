@@ -33,18 +33,39 @@ export class DataService {
         localForage.setItem(this.storageKey, data);
     }
 
-    public update(id: string, item: ListItem): void {
-        const data = this.dataSubject.value;
-        // data[index] = item;
+    public update(task: ListItem): void {
+        const list: List = this.dataSubject.value;
 
-        // this.next(data);
+        list[this.indexOfTask(list, task)] = task;
+
+        this.next(list);
     }
 
-    public add(item: ListItem): void {
-        const data = this.dataSubject.value;
-        data.push(item);
+    indexOfTask(list: List, task: ListItem): number {
+        return list.findIndex((t: ListItem) => t.id === task.id);
+    }
+
+    public new(title: string, description: string, dueDate: string): void {
+        const data: List = this.dataSubject.value;
+
+        const task: ListItem = {
+            title,
+            id: + new Date() + '',
+            dueDate,
+            text: description
+        } as ListItem;
+
+        data.push(task);
 
         this.next(data);
+    }
+
+    delete(task: ListItem): void {
+        const list: List = this.dataSubject.value;
+
+        list.splice(this.indexOfTask(list, task), 1);
+
+        this.next(list);
     }
 
     public move(oldIdex: number, newIndex: number): void {
